@@ -1,0 +1,21 @@
+.layout-container {
+    height: 100vh;
+    background-image: url("../assets/images/login-bg.jpg");
+    background-size: cover;
+}
+
+.outlet-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+
+.ui-divider-horizontal{
+    height: 2px;
+    border-top: 1px solid lightgray;
+}
+
+.input-container div label, .input-container div input, .input-container button{
+    font-size: small;
+}
