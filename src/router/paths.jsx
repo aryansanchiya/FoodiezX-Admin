@@ -1,10 +1,12 @@
-import { DashboardOutlined, DiscountOutlined, HistoryOutlined, InfoOutlined, PersonOutline, StorefrontOutlined } from "@mui/icons-material";
+import { DashboardOutlined, DiscountOutlined, Diversity1Outlined, HistoryOutlined, InfoOutlined, PersonOutline, StorefrontOutlined } from "@mui/icons-material";
 import Login from "../auth/Login";
 import Dashboard from "../pages/Dashboard";
 import Profile from "../pages/Profile";
 import Discounts from "../pages/Discounts";
 import Restaurant from "../pages/Restaurant";
 import RestaurantAdd from "../pages/RestaurantAdd";
+import RestaurantView from "../pages/RestaurantView";
+import CustomerDashboard from "../pages/CustomerDashboard";
 
 export const mainLayoutPaths = [
     {
@@ -25,6 +27,19 @@ export const mainLayoutPaths = [
         element: <RestaurantAdd />,
         icon: <StorefrontOutlined fontSize='small' />,
         hide: true
+    },
+    {
+        path: "/restaurants/view/:id",
+        title: "Name of Restaurant",
+        element: <RestaurantView />,
+        icon: <StorefrontOutlined fontSize='small' />,
+        hide: true
+    },
+    {
+        path: "/customers",
+        title: "Customers",
+        element: <CustomerDashboard />,
+        icon: <Diversity1Outlined fontSize='small' />
     },
     {
         path: "/discounts",

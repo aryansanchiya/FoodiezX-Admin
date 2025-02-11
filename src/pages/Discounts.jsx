@@ -10,7 +10,7 @@ import dayjs from 'dayjs';
 import toast from 'react-hot-toast';
 
 const breadcrumbList = [
-  { link: "/", name: "Discounts", current: true }
+  { link: "/", name: "discounts", current: true }
 ];
 
 const EditForm = ({ handleSave, values, handleChange, loading }) => {

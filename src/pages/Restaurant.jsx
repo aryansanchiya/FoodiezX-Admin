@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const breadcrumbList = [
-    { link: "/", name: "Restaurants", current: true }
+    { link: "/", name: "restaurants", current: true }
 ];
 
 const Restaurant = () => {
@@ -16,9 +16,11 @@ const Restaurant = () => {
         return (
             <>
                 <div className='d-flex gap-2 h-100 align-items-center'>
-                    <div className='text-secondary cursor-pointer'>
-                        <VisibilityOutlined fontSize='small' />
-                    </div>
+                    <Link to={"/restaurants/view/1"}>
+                        <div className='text-secondary cursor-pointer'>
+                            <VisibilityOutlined fontSize='small' />
+                        </div>
+                    </Link>
                     <div className='text-success cursor-pointer'>
                         <EditOutlined fontSize='small' />
                     </div>

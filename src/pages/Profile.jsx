@@ -8,8 +8,8 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import toast from 'react-hot-toast';
 
 const breadcrumbList = [
-  { link: "/", name: "Dashboard", current: false },
-  { link: "/", name: "Profile", current: true }
+  { link: "/", name: "dashboard", current: false },
+  { link: "/", name: "profile", current: true }
 ];
 
 const AntTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) => ({

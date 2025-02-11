@@ -6,7 +6,7 @@ import CustomLineChart from '../Charts/CustomLineChart';
 import CustomPolarRadar from '../Charts/CustomPolarRadar';
 
 const breadcrumbList = [
-  { link: "/dashboard", name: "Dashboard", current: true }
+  { link: "/dashboard", name: "dashboard", current: true }
 ]
 
 const Dashboard = () => {

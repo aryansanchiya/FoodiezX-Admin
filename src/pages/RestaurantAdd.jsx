@@ -8,8 +8,8 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import toast from 'react-hot-toast';
 
 const breadcrumbList = [
-    { link: "/restaurants", name: "Restaurants", current: false },
-    { link: "/", name: "Add restaurant", current: true },
+    { link: "/restaurants", name: "restaurants", current: false },
+    { link: "/", name: "add", current: true },
 ];
 
 const RestaurantAdd = () => {

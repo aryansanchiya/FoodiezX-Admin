@@ -63,12 +63,21 @@
     height: calc(100vh - 130px);
 }
 
+.table-container-small {
+    height: calc(100vh - 300px);
+}
+
 .ag-header {
     background-color: #97D0B6;
 }
 
 .ag-root-wrapper {
     border-top-left-radius: 0;
+    border-color: #97D0B6;
+}
+
+.table-container-small div div .ag-root-wrapper {
+    border-radius: 8px;
     border-color: #97D0B6;
 }
 
