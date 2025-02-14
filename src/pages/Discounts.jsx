@@ -168,7 +168,6 @@ const Discounts = () => {
   const Title = () => (
     <p className='m-0'>
       <span className='text-secondary'>Active:</span> 100 &nbsp;
-      <span className='text-secondary'>∙ Upcoming:</span> 100 &nbsp;
       <span className='text-secondary'>∙ Expired:</span> 100
     </p>
   );

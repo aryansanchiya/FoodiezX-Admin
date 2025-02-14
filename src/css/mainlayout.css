@@ -64,7 +64,11 @@
 }
 
 .table-container-small {
-    height: calc(100vh - 300px);
+    height: calc(100vh - 270px);
+}
+
+.tabs {
+    height: calc(100vh - 170px);
 }
 
 .ag-header {
@@ -95,6 +99,10 @@
 @media (max-width: 600px) {
     .ag-paging-row-summary-panel {
         display: none;
+    }
+
+    .ag-paging-page-summary-panel {
+        gap: 5px;
     }
 }
 

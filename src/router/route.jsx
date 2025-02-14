@@ -1,29 +1,31 @@
-import { createBrowserRouter, useNavigate, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
-import { mainLayoutPaths, path_sideoff } from "./paths";
 import SideoffLayout from "../layout/SideoffLayout";
+import { mainLayoutPaths, path_sideoff } from "./paths";
+import { getFromLocal } from "../auth/authentication";
 
-const mainLayoutPathsSorted = [];
-
-for (const item of mainLayoutPaths) {
-    if (item.children) {
-        for (const subItem of item.children) {
-            mainLayoutPathsSorted.push(subItem)
-        }
-        break;
+const authLoader = async () => {
+    const user = getFromLocal();
+    if (!user) {
+        return redirect("/login");
     }
-    mainLayoutPathsSorted.push(item);
-}
+    return null;
+};
+
+const mainLayoutPathsProtected = mainLayoutPaths.map(route => ({
+    ...route,
+    loader: authLoader
+}));
 
 export const router = createBrowserRouter([
     {
         element: <MainLayout />,
         errorElement: <div>Error 404</div>,
-        children: mainLayoutPathsSorted
+        children: mainLayoutPathsProtected
     },
     {
         element: <SideoffLayout />,
         errorElement: <div>Error 404</div>,
         children: path_sideoff
-    }
-])
+    },
+]);

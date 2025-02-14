@@ -25,7 +25,7 @@ const TableComponent = ({ columnDefs, rowData, title, buttons, loading}) => {
 
     return (
         <div className='m-3 rounded table-container'>
-            <div className='d-flex justify-content-between'>
+            <div className='d-flex justify-content-between gap-1 '>
                 <div className='px-3 py-2' style={{ backgroundColor: "#97D0B6", borderTopLeftRadius: 10, borderTopRightRadius: 10 }}>
                     <p className='m-0 fw-bold' style={{ fontSize: "small" }}>
                         {title || "Table title"}

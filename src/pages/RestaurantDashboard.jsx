@@ -1,17 +1,17 @@
 import React from 'react'
 import HeaderComponent from '../componenets/Header';
 import Grid from '@mui/material/Grid2';
-import { AddOutlined, ClearAll, ClearAllOutlined, CreditScoreOutlined, DoDisturbOutlined, GroupOutlined, LibraryAddCheckOutlined, ListOutlined, RecentActorsOutlined, SegmentOutlined, TableRestaurantOutlined, TabletOutlined } from '@mui/icons-material';
+import { AddOutlined, ClearAll, ClearAllOutlined, CreditScoreOutlined, DoDisturbOutlined, EventAvailableOutlined, GroupOutlined, LibraryAddCheckOutlined, ListOutlined, MoneyOutlined, PointOfSaleOutlined, RecentActorsOutlined, SegmentOutlined, StorefrontOutlined, TableRestaurantOutlined } from '@mui/icons-material';
 import CustomLineChart from '../Charts/CustomLineChart';
 import CustomPolarRadar from '../Charts/CustomPolarRadar';
 import TableComponentSmall from '../componenets/TableComponentSmall';
 import { Link } from 'react-router-dom';
 
 const breadcrumbList = [
-  { link: "/", name: "customers", current: true }
+  { link: "/", name: "restaurants", current: true }
 ]
 
-const CustomerDashboard = () => {
+const RestaurantDashboard = () => {
 
   const rowData = (() => {
     const rowData = [];
@@ -43,76 +43,76 @@ const CustomerDashboard = () => {
 
   return (
     <div className='page-container'>
-      <HeaderComponent title="Customers" breadcrumb={breadcrumbList} />
+      <HeaderComponent title="Restaurants" breadcrumb={breadcrumbList} />
 
       <Grid container className="m-3" spacing={2}>
         {/* cards */}
         <Grid className='rounded' size={{ xs: 12, md: 12, lg: 12 }}>
           <Grid container spacing={2}>
             <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-              <Link to={"/customers/list"}>
-                <div className='rounded p-3 bg-white d-flex align-items-center justify-content-between'>
+              <Link to={"/restaurants/list"}>
+                <div className='d-flex rounded p-3 bg-white align-items-center justify-content-between'>
                   <div>
                     <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
-                      Total Customers
+                      Total Restaurants
                     </p>
                     <h5 className='fw-bold text-success m-0'>
                       3982
                     </h5>
                   </div>
                   <div className='text-success' style={{ opacity: 0.7 }}>
-                    <GroupOutlined style={{ fontSize: "2.5rem" }} />
+                    <StorefrontOutlined style={{ fontSize: "2.5rem" }} />
                   </div>
                 </div>
               </Link>
             </Grid>
             <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-              <Link to={"/customers"}>
-                <div className='rounded p-3 bg-white d-flex align-items-center justify-content-between'>
+              <Link to={"/restaurants"}>
+                <div className='d-flex align-items-center rounded p-3 bg-white justify-content-between'>
                   <div>
                     <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
-                      Occupied Tables
+                      Total Earnings
                     </p>
                     <h5 className='fw-bold text-success m-0'>
                       3982
                     </h5>
                   </div>
                   <div className='text-success' style={{ opacity: 0.7 }}>
-                    <TableRestaurantOutlined style={{ fontSize: "2.5rem" }} />
+                    <PointOfSaleOutlined style={{ fontSize: "2.5rem" }} />
                   </div>
                 </div>
               </Link>
             </Grid>
             <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-              <Link to={"/customers"}>
-                <div className='rounded p-3 bg-white d-flex align-items-center justify-content-between'>
+              <Link to={"/bookings"}>
+                <div className='d-flex align-items-center justify-content-between rounded p-3 bg-white'>
                   <div>
                     <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
-                      Available Tables
+                      Today Bookings
                     </p>
                     <h5 className='fw-bold text-success m-0'>
                       3982
                     </h5>
                   </div>
                   <div className='text-success' style={{ opacity: 0.7 }}>
-                    <TableRestaurantOutlined style={{ fontSize: "2.5rem" }} />
+                    <LibraryAddCheckOutlined style={{ fontSize: "2.5rem" }} />
                   </div>
                 </div>
               </Link>
             </Grid>
             <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-              <Link to={"/customers"}>
-                <div className='rounded p-3 bg-white d-flex align-items-center justify-content-between'>
+              <Link to={"/bookings/canceled"}>
+                <div className='d-flex align-items-center justify-content-between rounded p-3 bg-white'>
                   <div>
                     <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
-                      Total Customers
+                      Canceled Bookings
                     </p>
                     <h5 className='fw-bold text-success m-0'>
                       3982
                     </h5>
                   </div>
                   <div className='text-success' style={{ opacity: 0.7 }}>
-                    <GroupOutlined style={{ fontSize: "2.5rem" }} />
+                    <DoDisturbOutlined style={{ fontSize: "2.5rem" }} />
                   </div>
                 </div>
               </Link>
@@ -137,6 +137,27 @@ const CustomerDashboard = () => {
             </div>
           </div>
         </Grid> */}
+        <Grid className='rounded bg-white p-3' size={{ xs: 12, md: 6, lg: 5 }}>
+          <div className='mb-3 d-flex justify-content-between align-items-start'>
+            <h6 className='fw-bold text-success'>
+              New Restaurants
+            </h6>
+            <Link to={"/restaurants/list"}>
+              <div className="d-flex justify-content-center align-items-center px-2 rounded gap-1 text-dark" onClick={() => { setOpen(true) }} style={{ height: 28, backgroundColor: "#97D0B6", }}>
+                <p className='m-0 fw-bold' style={{ fontSize: "small" }}>
+                  <SegmentOutlined style={{ fontSize: "1rem" }} />
+                </p>
+                <p className='m-0' style={{ fontSize: "small" }}>
+                  View all
+                </p>
+              </div>
+            </Link>
+          </div>
+
+          <div>
+            <TableComponentSmall columnDefs={columnDefs} rowData={rowData} title={<Title />} height={"80%"} />
+          </div>
+        </Grid>
         <Grid className='rounded bg-white p-3' size={{ xs: 12, md: 6, lg: 7 }}>
           <div className='mb-3 d-flex justify-content-between align-items-start'>
             <h6 className='fw-bold text-success'>
@@ -158,30 +179,9 @@ const CustomerDashboard = () => {
             <TableComponentSmall columnDefs={columnDefsBookings} rowData={rowData} title={<Title />} height={"80%"} />
           </div>
         </Grid>
-        <Grid className='rounded bg-white p-3' size={{ xs: 12, md: 6, lg: 5 }}>
-          <div className='mb-3 d-flex justify-content-between align-items-start'>
-            <h6 className='fw-bold text-success'>
-              New Customers
-            </h6>
-            <Link to={"/customers/list"}>
-              <div className="d-flex justify-content-center align-items-center px-2 rounded gap-1 text-dark" onClick={() => { setOpen(true) }} style={{ height: 28, backgroundColor: "#97D0B6", }}>
-                <p className='m-0 fw-bold' style={{ fontSize: "small" }}>
-                  <SegmentOutlined style={{ fontSize: "1rem" }} />
-                </p>
-                <p className='m-0' style={{ fontSize: "small" }}>
-                  View all
-                </p>
-              </div>
-            </Link>
-          </div>
-
-          <div>
-            <TableComponentSmall columnDefs={columnDefs} rowData={rowData} title={<Title />} height={"80%"} />
-          </div>
-        </Grid>
       </Grid>
     </div>
   )
 }
 
-export default CustomerDashboard
+export default RestaurantDashboard

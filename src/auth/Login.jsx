@@ -38,9 +38,7 @@ const Login = () => {
     setLoading(true);
     if (values.password.value == "Admin@123" && values.username.value == "admin") {
       setToLocal(JSON.stringify({ username: values.username.value, password: values.password.value }));
-      setTimeout(() => {
-        navigate('/');
-      }, 1000);
+      navigate('/');
     } else {
       toast.error("Invalid credentials!")
     }

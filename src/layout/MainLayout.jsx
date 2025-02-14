@@ -17,14 +17,6 @@ const MainLayout = () => {
 
   const location = useLocation();
   const pathname = location.pathname;
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const data = getFromLocal();
-    if (!data) {
-      navigate('/login', { replace: true });
-    }
-  });
 
   const [collapsed, setCollapsed] = useState(window.innerWidth < 500);
 

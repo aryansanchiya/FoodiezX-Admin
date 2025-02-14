@@ -1,9 +1,10 @@
 import React from 'react'
 import HeaderComponent from '../componenets/Header';
 import Grid from '@mui/material/Grid2';
-import { GroupOutlined } from '@mui/icons-material';
+import { GroupOutlined, LibraryAddCheckOutlined, StorefrontOutlined, TableRestaurantOutlined } from '@mui/icons-material';
 import CustomLineChart from '../Charts/CustomLineChart';
 import CustomPolarRadar from '../Charts/CustomPolarRadar';
+import { Link } from 'react-router-dom';
 
 const breadcrumbList = [
   { link: "/dashboard", name: "dashboard", current: true }
@@ -19,65 +20,73 @@ const Dashboard = () => {
         {/* cards */}
         <Grid className='rounded' size={{ xs: 12, md: 12, lg: 12 }}>
           <Grid container spacing={2}>
-            <Grid className='rounded p-3 bg-white' size={{ xs: 12, md: 6, lg: 3 }}>
-              <div className='d-flex align-items-center justify-content-between'>
-                <div>
-                  <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
-                    Total Users
-                  </p>
-                  <h5 className='fw-bold text-success m-0'>
-                    3982
-                  </h5>
+            <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+              <Link to={"/customers/list"}>
+                <div className='rounded p-3 bg-white d-flex align-items-center justify-content-between'>
+                  <div>
+                    <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
+                      Total Customers
+                    </p>
+                    <h5 className='fw-bold text-success m-0'>
+                      3982
+                    </h5>
+                  </div>
+                  <div className='text-success' style={{ opacity: 0.7 }}>
+                    <GroupOutlined style={{ fontSize: "2.5rem" }} />
+                  </div>
                 </div>
-                <div className='text-success' style={{ opacity: 0.7 }}>
-                  <GroupOutlined style={{ fontSize: "2.5rem" }} />
-                </div>
-              </div>
+              </Link>
             </Grid>
-            <Grid className='rounded p-3 bg-white' size={{ xs: 12, md: 6, lg: 3 }}>
-              <div className='d-flex align-items-center justify-content-between'>
-                <div>
-                  <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
-                    Total Users
-                  </p>
-                  <h5 className='fw-bold text-success m-0'>
-                    3982
-                  </h5>
+            <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+              <Link to={"/restaurants/list"}>
+                <div className='rounded p-3 bg-white d-flex align-items-center justify-content-between'>
+                  <div>
+                    <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
+                      Total Restaurants
+                    </p>
+                    <h5 className='fw-bold text-success m-0'>
+                      3982
+                    </h5>
+                  </div>
+                  <div className='text-success' style={{ opacity: 0.7 }}>
+                    <StorefrontOutlined style={{ fontSize: "2.5rem" }} />
+                  </div>
                 </div>
-                <div className='text-success' style={{ opacity: 0.7 }}>
-                  <GroupOutlined style={{ fontSize: "2.5rem" }} />
-                </div>
-              </div>
+              </Link>
             </Grid>
-            <Grid className='rounded p-3 bg-white' size={{ xs: 12, md: 6, lg: 3 }}>
-              <div className='d-flex align-items-center justify-content-between'>
-                <div>
-                  <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
-                    Total Users
-                  </p>
-                  <h5 className='fw-bold text-success m-0'>
-                    3982
-                  </h5>
+            <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+              <Link to={"/bookings"}>
+                <div className='rounded p-3 bg-white d-flex align-items-center justify-content-between'>
+                  <div>
+                    <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
+                      Total Bookings
+                    </p>
+                    <h5 className='fw-bold text-success m-0'>
+                      3982
+                    </h5>
+                  </div>
+                  <div className='text-success' style={{ opacity: 0.7 }}>
+                    <LibraryAddCheckOutlined style={{ fontSize: "2.5rem" }} />
+                  </div>
                 </div>
-                <div className='text-success' style={{ opacity: 0.7 }}>
-                  <GroupOutlined style={{ fontSize: "2.5rem" }} />
-                </div>
-              </div>
+              </Link>
             </Grid>
-            <Grid className='rounded p-3 bg-white' size={{ xs: 12, md: 6, lg: 3 }}>
-              <div className='d-flex align-items-center justify-content-between'>
-                <div>
-                  <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
-                    Total Users
-                  </p>
-                  <h5 className='fw-bold text-success m-0'>
-                    3982
-                  </h5>
+            <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+              <Link to={"/"}>
+                <div className='rounded p-3 bg-white d-flex align-items-center justify-content-between'>
+                  <div>
+                    <p className='fw-bold text-secondary m-0' style={{ fontSize: "smaller", opacity: 0.8 }}>
+                      Available Tables
+                    </p>
+                    <h5 className='fw-bold text-success m-0'>
+                      3982
+                    </h5>
+                  </div>
+                  <div className='text-success' style={{ opacity: 0.7 }}>
+                    <TableRestaurantOutlined style={{ fontSize: "2.5rem" }} />
+                  </div>
                 </div>
-                <div className='text-success' style={{ opacity: 0.7 }}>
-                  <GroupOutlined style={{ fontSize: "2.5rem" }} />
-                </div>
-              </div>
+              </Link>
             </Grid>
           </Grid>
         </Grid>
@@ -96,7 +105,7 @@ const Dashboard = () => {
             Table Occupancy
           </h6>
           <div className='d-flex justify-content-center align-items-center h-100 pb-4'>
-            <div style={{maxWidth: 250}} className='w-100'>
+            <div style={{ maxWidth: 250 }} className='w-100'>
               <CustomPolarRadar />
             </div>
           </div>

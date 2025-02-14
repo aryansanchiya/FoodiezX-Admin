@@ -1,4 +1,4 @@
-import { DashboardOutlined, DiscountOutlined, Diversity1Outlined, HistoryOutlined, InfoOutlined, PersonOutline, StorefrontOutlined } from "@mui/icons-material";
+import { CollectionsBookmarkOutlined, CreditScoreOutlined, DashboardOutlined, DiscountOutlined, Diversity1Outlined, HistoryOutlined, InfoOutlined, PersonOutline, StorefrontOutlined } from "@mui/icons-material";
 import Login from "../auth/Login";
 import Dashboard from "../pages/Dashboard";
 import Profile from "../pages/Profile";
@@ -7,6 +7,11 @@ import Restaurant from "../pages/Restaurant";
 import RestaurantAdd from "../pages/RestaurantAdd";
 import RestaurantView from "../pages/RestaurantView";
 import CustomerDashboard from "../pages/CustomerDashboard";
+import CustomerList from "../pages/CustomersList";
+import CustomerView from "../pages/CustomerView";
+import BookingsList from "../pages/Bookings";
+import RestaurantDashboard from "../pages/RestaurantDashboard";
+import BookingCanceledList from "../pages/BookingCanceled";
 
 export const mainLayoutPaths = [
     {
@@ -18,8 +23,15 @@ export const mainLayoutPaths = [
     {
         path: "/restaurants",
         title: "Restaurants",
-        element: <Restaurant />,
+        element: <RestaurantDashboard />,
         icon: <StorefrontOutlined fontSize='small' />
+    },
+    {
+        path: "/restaurants/list",
+        title: "Restaurants",
+        element: <Restaurant />,
+        icon: <StorefrontOutlined fontSize='small' />,
+        hide: true
     },
     {
         path: "/restaurants/add",
@@ -40,6 +52,33 @@ export const mainLayoutPaths = [
         title: "Customers",
         element: <CustomerDashboard />,
         icon: <Diversity1Outlined fontSize='small' />
+    },
+    {
+        path: "/customers/list",
+        title: "Customers",
+        element: <CustomerList />,
+        icon: <Diversity1Outlined fontSize='small' />,
+        hide: true
+    },
+    {
+        path: "/customers/view/:id",
+        title: "Customers",
+        element: <CustomerView />,
+        icon: <Diversity1Outlined fontSize='small' />,
+        hide: true
+    },
+    {
+        path: "/bookings",
+        title: "Bookings",
+        element: <BookingsList />,
+        icon: <CreditScoreOutlined fontSize='small' />
+    },
+    {
+        path: "/bookings/canceled",
+        title: "Bookings",
+        element: <BookingCanceledList />,
+        icon: <CreditScoreOutlined fontSize='small' />,
+        hide: true
     },
     {
         path: "/discounts",

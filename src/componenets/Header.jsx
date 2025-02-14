@@ -95,7 +95,7 @@ const HeaderComponent = ({ title, notification, profile, breadcrumb }) => {
                 <CloseOutlined fontSize='small' />
               </div>
             </div>
-            <div className='d-flex flex-column gap-3' style={{ overflowY: 'scroll' }}>
+            <div className='d-flex flex-column gap-3'>
               <NotificationList notifications={notifications} />
             </div>
           </div>
